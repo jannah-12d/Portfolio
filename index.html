@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jannah Seifeldin — Product Designer</title>
+<meta name="description" content="Jannah Karim Seifeldin is a Product Designer 2 at noon in Cairo, with roots in graphic design, branding and packaging.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Pinyon+Script&display=swap">
+<style>
+/* ===== Colors: change these to restyle the whole site ===== */
+:root{
+  --pink:#EFC0C6;
+  --cream:#F0E7DE;
+  --paper2:#E2D3C6;
+  --red:#9A1A1E;
+  --wine:#5C0E14;
+  --red-soft:#7A2A2E;
+  --pad:clamp(20px,4vw,56px);
+  --script:'Pinyon Script','Snell Roundhand','Apple Chancery',cursive;
+  --sans:'Archivo',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --cur:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M3 3 L24 11.5 L13.5 14 L11 25 Z' fill='none' stroke='%235C0E14' stroke-width='4.5' stroke-linejoin='round'/%3E%3Cpath d='M3 3 L24 11.5 L13.5 14 L11 25 Z' fill='none' stroke='%23F0E7DE' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") 3 3, auto;
+  --cur-link:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'%3E%3Cpath d='M3 3 L24 11.5 L13.5 14 L11 25 Z' fill='%23EFC0C6' stroke='%235C0E14' stroke-width='2.5' stroke-linejoin='round'/%3E%3C/svg%3E") 3 3, pointer;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+html.lock{overflow:hidden}
+body{margin:0;background:var(--wine);color:var(--cream);font-family:var(--sans);cursor:var(--cur);-webkit-font-smoothing:antialiased}
+a,button{cursor:var(--cur-link)}
+a{color:inherit}
+[hidden]{display:none!important}
+img{max-width:100%}
+.skip{position:absolute;left:12px;top:-80px;z-index:200;padding:12px 16px;background:var(--cream);color:var(--wine);font-weight:800;text-decoration:none}
+.skip:focus{top:12px}
+main{overflow-x:clip}
+.label{margin:0;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.paper{background-color:var(--c);background-image:url("images/paper.jpg");background-size:320px;background-blend-mode:multiply}
+
+/* ===== Fixed vertical menu ===== */
+.hdr{position:fixed;top:0;left:var(--pad);z-index:50;display:flex;align-items:flex-start;padding:32px 0 0;pointer-events:none;color:var(--pink);transition:transform .5s cubic-bezier(.2,.7,.2,1),color .45s ease}
+.hdr.away{transform:translateY(-130%)}
+.hdr[data-zone="cream"],.hdr[data-zone="pink"]{color:var(--red)}
+.hdr a{pointer-events:auto}
+.vmenu{display:flex}
+.vmenu a{writing-mode:vertical-rl;text-decoration:none;font-weight:800;font-stretch:112%;font-size:15px;letter-spacing:.1em;line-height:1;padding:6px 14px}
+.vmenu a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.vmenu a{transition:opacity .25s ease}
+.vmenu:hover a{opacity:.55}
+.vmenu a:hover,.vmenu a:focus-visible{opacity:1}
+
+/* ===== Running text bars ===== */
+.mq{overflow:hidden;white-space:nowrap}
+.mq-track{display:inline-flex;animation:mq 42s linear infinite}
+.mq-track.slow{animation-duration:70s}
+.mq-group{display:inline-flex;align-items:center;flex-shrink:0}
+.mq .item{padding:0 18px}
+.sep{flex:none;width:12px;height:12px}
+.about-band .sep{width:.42em;height:.42em}
+@keyframes mq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ===== Hero ===== */
+.hero{position:relative}
+.hero-pin{position:relative;min-height:100vh;display:flex;flex-direction:column;overflow:hidden;color:var(--cream);background:var(--wine) url("images/mosaic-fluted.jpg") center/cover no-repeat}
+.hero-pin::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,10,.35) 0%,rgba(40,6,10,.12) 40%,rgba(40,6,10,.6) 100%)}
+.hero-pin>*{position:relative;z-index:1}
+.motion .hero{height:calc(var(--vh,1vh)*200)}
+.motion .hero-pin{position:sticky;top:0;height:calc(var(--vh,1vh)*100);min-height:0}
+.hero-top{display:flex;justify-content:flex-end;padding:36px var(--pad) 0}
+.hero-top p{margin:0;max-width:240px;text-align:right;font-size:14px;line-height:1.4;font-weight:600;letter-spacing:.02em}
+.hero-name{flex:1 1 auto;display:flex;align-items:center;justify-content:center;padding:40px var(--pad)}
+.name{margin:0;width:min(100%,1200px);display:flex;flex-direction:column;font-weight:400;line-height:1}
+.name-script{align-self:flex-start;padding:.08em .15em 0 .34em;font-family:var(--script);font-size:clamp(104px,21vw,320px);line-height:1.05;color:var(--pink);will-change:transform}
+.name-sur{align-self:flex-end;margin-top:-.55em;font-weight:900;font-stretch:125%;font-size:clamp(34px,7.4vw,116px);line-height:.9;letter-spacing:-.01em;color:var(--cream);will-change:transform}
+.name-script>span{display:block;animation:inScript 1.4s cubic-bezier(.2,.7,.2,1) both}
+.name-sur>span{display:block;animation:inSur 1s cubic-bezier(.2,.7,.2,1) .35s both}
+@keyframes inScript{from{opacity:0;filter:blur(14px);transform:translateY(14px)}to{opacity:1;filter:none;transform:none}}
+@keyframes inSur{from{opacity:0;transform:translateY(40%)}to{opacity:1;transform:none}}
+.hero-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px;padding:0 var(--pad) 16px}
+.hero-bottom .label{color:var(--pink)}
+.scroll-link{min-height:44px;display:flex;align-items:center;gap:10px;font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.hero .mq{padding:12px 0;border-top:1px solid rgba(240,231,222,.45);border-bottom:1px solid rgba(240,231,222,.45);background:rgba(40,6,10,.35);font-size:14px;font-weight:500}
+
+/* ===== Work: a stack of paper folders ===== */
+.work{position:relative;padding-top:clamp(130px,16vh,180px);background:var(--cream);color:var(--red);overflow:hidden}
+.work-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:16px 40px;padding:0 var(--pad) clamp(100px,12vh,130px)}
+.work-title{margin:0;font-weight:900;font-stretch:125%;font-size:clamp(30px,4vw,60px);line-height:.9;text-transform:uppercase}
+.work-title .s{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.15em;margin-left:.08em}
+.work-note{margin:0;display:flex;flex-direction:column;gap:6px;max-width:320px;font-size:15px;line-height:1.5;font-weight:600}
+.work-note .label{font-size:12px}
+.stack{display:flex;flex-direction:column}
+.folder{position:relative;display:block;color:var(--ink);text-decoration:none;border-radius:8px 8px 0 0;box-shadow:0 -18px 36px -22px rgba(40,6,10,.55);will-change:transform}
+.ftab{position:absolute;bottom:calc(100% - 1px);left:var(--tabx,10%);display:flex;align-items:baseline;gap:12px;height:clamp(40px,5vh,48px);padding:0 clamp(18px,2vw,30px);align-items:center;border:0;border-radius:15px 15px 0 0;color:var(--ink);font:inherit;white-space:nowrap;box-shadow:0 -12px 24px -16px rgba(40,6,10,.5)}
+.ftab::before,.ftab::after{content:"";position:absolute;bottom:0;width:15px;height:15px}
+.ftab::before{left:-15px;background:radial-gradient(circle at 0 0,transparent 14.5px,var(--c) 15px)}
+.ftab::after{right:-15px;background:radial-gradient(circle at 100% 0,transparent 14.5px,var(--c) 15px)}
+.ftab:focus-visible{outline:3px solid var(--ink);outline-offset:-8px}
+.t-no{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.t-name{font-size:clamp(15px,1.25vw,19px);font-weight:500;letter-spacing:-.01em}
+.f-strip{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:10px 32px;padding:clamp(14px,1.8vh,18px) var(--pad) clamp(54px,6.5vh,62px)}
+.folder[data-file] .f-strip{cursor:var(--cur-link)}
+.folder.is-open .f-strip{padding-bottom:clamp(20px,3vh,32px)}
+.f-title{margin:0;display:flex;flex-direction:column;gap:3px;font-weight:400}
+.f-no{font-size:12px;font-weight:800;letter-spacing:.14em}
+.f-name{font-weight:900;font-stretch:125%;font-size:clamp(22px,2.6vw,38px);line-height:.92;text-transform:uppercase}
+.f-name .s{font-family:var(--script);font-weight:400;text-transform:none;letter-spacing:0;font-size:1.15em;margin-left:.08em}
+.f-side{display:flex;flex-direction:column;align-items:flex-end;gap:6px;text-align:right;font-size:13px;font-weight:700;line-height:1.4}
+.f-act{display:inline-flex;align-items:center;gap:8px;font-weight:800;border-bottom:2px solid currentColor}
+.f-act .on{display:none}
+.folder.is-open .f-act .on{display:inline}
+.folder.is-open .f-act .off{display:none}
+.f-body{display:grid;grid-template-rows:0fr;visibility:hidden;transition:grid-template-rows .75s cubic-bezier(.2,.7,.2,1),visibility 0s linear .75s}
+.folder.is-open .f-body{grid-template-rows:1fr;visibility:visible;transition:grid-template-rows .75s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.f-inner{min-height:0;overflow:hidden}
+.f-detail{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);align-items:start;gap:28px clamp(28px,4vw,64px);padding:0 var(--pad) clamp(72px,8.5vh,84px);opacity:0;transform:translateY(18px);transition:opacity .35s ease,transform .45s ease}
+.folder.is-open .f-detail{opacity:1;transform:none;transition-delay:.25s}
+.f-info{display:flex;flex-direction:column;gap:20px}
+.f-info .label{color:var(--ink)}
+.f-dl{margin:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 24px;padding:16px 0;border-top:1.5px solid currentColor;border-bottom:1.5px solid currentColor}
+.f-dl dt{font-size:11px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
+.f-dl dd{margin:4px 0 0;font-size:15px;font-weight:600;line-height:1.35}
+.f-sum{margin:0;font-size:clamp(15px,1.25vw,17px);line-height:1.6;font-weight:600}
+.f-close{align-self:flex-start;min-height:44px;display:inline-flex;align-items:center;gap:10px;padding:0 18px;border:2px solid currentColor;border-radius:999px;background:none;color:inherit;font:inherit;font-size:14px;font-weight:800}
+.f-shots{display:flex;gap:14px;height:clamp(240px,48vh,470px);overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:thin}
+.shot{position:relative;flex:none;height:100%;aspect-ratio:var(--ar,16/10);display:flex;align-items:flex-end;padding:12px;border:0;overflow:hidden;background:var(--tint);color:inherit;font:inherit;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;text-align:left;transition:transform .35s ease}
+.shot:not(:disabled):hover{transform:scale(1.02)}
+.shot:disabled{align-items:center;justify-content:center;cursor:inherit}
+.shot:focus-visible,.f-close:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.folder--front{min-height:clamp(150px,19vh,200px)}
+.folder--front:focus-visible{outline:3px solid var(--ink);outline-offset:-10px}
+.folder--front .f-strip{padding-bottom:clamp(28px,4vh,40px)}
+@media (max-width:900px){.f-detail{grid-template-columns:minmax(0,1fr)}.f-shots{height:clamp(260px,60vh,420px)}}
+@media (max-width:600px){.f-side{align-items:flex-start;text-align:left}.ftab{gap:10px}}
+/* ===== About ===== */
+.about-band{padding:22px 0;background:var(--red);color:var(--pink);font-weight:900;font-stretch:125%;font-size:clamp(40px,6vw,88px);line-height:1.05;text-transform:uppercase}
+.about-band .item{padding:0 .3em}
+.about{display:flex;flex-wrap:wrap;background:var(--pink);color:var(--red)}
+.about-media{position:relative;flex:1 1 420px;min-height:max(640px,100vh);display:flex;flex-direction:column;justify-content:flex-end;padding:var(--pad);overflow:hidden;color:var(--cream);background:var(--wine) url("images/tiles-fluted.jpg") center/cover no-repeat}
+.about-media::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,6,10,0) 45%,rgba(40,6,10,.55) 100%)}
+.about-hello{position:relative;margin:0;padding-left:.2em;font-family:var(--script);font-weight:400;font-size:clamp(96px,13vw,210px);line-height:.95;color:var(--cream)}
+.about-copy{flex:1 1 480px;display:flex;flex-direction:column;justify-content:center;gap:clamp(32px,4vw,44px);padding:clamp(72px,9vw,128px) var(--pad)}
+.about-copy h2{margin:0;font-weight:900;font-stretch:125%;font-size:clamp(34px,4.2vw,62px);line-height:.95;text-transform:uppercase}
+.about-copy h2.about-q{padding-left:.22em;font-family:var(--script);font-weight:400;font-stretch:100%;font-size:clamp(56px,6.4vw,100px);line-height:1.08;letter-spacing:0;text-transform:none}
+.about-copy h2 .s{display:block;margin-top:.05em;font-family:var(--script);font-weight:400;font-size:1.1em;line-height:1.1;text-transform:none;letter-spacing:0}
+.lead{margin:0;max-width:620px;font-size:clamp(17px,1.4vw,20px);line-height:1.6;font-weight:600}
+.list{list-style:none;margin:0;padding:0;max-width:620px;border-bottom:1px solid rgba(154,26,30,.35)}
+.list li{display:flex;gap:24px;align-items:baseline;padding:14px 0;border-top:1px solid rgba(154,26,30,.35);font-size:17px;font-weight:600;line-height:1.4}
+.list .n{min-width:28px;font-size:13px;font-weight:800;letter-spacing:.14em}
+.process{position:relative;min-height:88px;max-width:640px}
+.plus{position:absolute;left:12px;top:12px;z-index:2;width:64px;height:64px;display:flex;align-items:center;justify-content:center;padding:0;border:0;background:none;color:var(--red)}
+.plus svg{transition:transform .45s cubic-bezier(.3,.7,.2,1)}
+.plus[aria-expanded="true"] svg{transform:rotate(135deg)}
+.plus:focus-visible,.text-btn:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.process-box{display:flex;flex-direction:column;gap:14px;padding:28px clamp(20px,3vw,40px) 30px 96px;border:2px solid var(--red);animation:wipe .55s cubic-bezier(.3,.7,.2,1) both}
+.process-box .big{margin:0;font-weight:900;font-stretch:112%;font-size:clamp(22px,2.2vw,32px);line-height:1.1}
+.process-box p{margin:0;font-size:17px;line-height:1.5;font-weight:500}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+.ulinks{display:flex;flex-wrap:wrap;gap:4px 28px}
+.ulinks a{min-height:44px;display:inline-flex;align-items:center;font-size:16px;font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+@media (max-width:760px){.about-copy{padding-top:136px}}
+
+/* ===== Contact ===== */
+.contact{padding:clamp(96px,11vw,150px) var(--pad) 32px;background:var(--wine);color:var(--cream)}
+.contact-in{max-width:1280px;margin:0 auto;display:flex;flex-direction:column;gap:clamp(56px,7vw,88px)}
+.contact .label{color:var(--pink)}
+.talk{margin:8px 0 0;display:flex;flex-direction:column;font-weight:400;line-height:1}
+.talk .s{font-family:var(--script);font-size:clamp(56px,8vw,120px);line-height:1.15;color:var(--pink);padding-left:.12em}
+.talk .b{margin-top:-.2em;font-weight:900;font-stretch:125%;font-size:clamp(44px,9vw,136px);line-height:.9;text-transform:uppercase}
+.cards{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:24px 32px}
+.cards li{display:flex}
+.cards a{flex:1;min-width:0;min-height:44px;display:flex;flex-direction:column;gap:6px;padding-top:20px;border-top:2px solid rgba(240,231,222,.3);text-decoration:none;transition:border-color .3s ease}
+.cards a:hover,.cards a:focus-visible{border-color:var(--pink)}
+.cards .k{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.cards .v{font-size:clamp(17px,1.6vw,22px);font-weight:700;overflow-wrap:anywhere}
+.foot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 24px;padding-top:24px;border-top:1px solid rgba(240,231,222,.15);font-size:14px;color:var(--pink)}
+.foot p{margin:0}
+.foot a{min-height:44px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:700;color:var(--cream)}
+
+/* ===== Reveal on scroll ===== */
+.motion .rv{opacity:0;transform:translateY(56px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.motion .rv.in{opacity:1;transform:none}
+
+/* ===== CV ===== */
+.cv{min-height:100vh;background:var(--cream);color:var(--wine)}
+.cv-top{display:flex;justify-content:flex-end;padding:32px var(--pad) 0}
+.btn{min-height:48px;display:inline-flex;align-items:center;gap:10px;padding:0 24px;border-radius:999px;background:var(--red);color:var(--cream);text-decoration:none;font-size:15px;font-weight:800}
+.btn:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.cv-main{max-width:1120px;margin:0 auto;padding:clamp(72px,8vw,112px) var(--pad) clamp(80px,9vw,120px);display:flex;flex-direction:column;gap:clamp(56px,6vw,80px)}
+.cv-name{margin:0;display:flex;flex-direction:column;align-items:flex-start;font-weight:400;line-height:1}
+.cv-name .s{padding:.08em .15em 0 .34em;font-family:var(--script);font-size:clamp(84px,11vw,168px);line-height:1.05;color:var(--red)}
+.cv-name .b{margin-top:-.45em;margin-left:clamp(32px,12vw,200px);font-weight:900;font-stretch:125%;font-size:clamp(26px,4.6vw,68px);line-height:.9;text-transform:uppercase;color:var(--wine)}
+.cv-role{margin:32px 0 0;font-size:clamp(20px,2vw,26px);font-weight:800;font-stretch:112%;color:var(--red)}
+.cv-contact{list-style:none;margin:16px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px 28px;font-size:16px;font-weight:600}
+.cv-contact a{text-underline-offset:4px}
+.cv-sec{display:flex;flex-wrap:wrap;gap:16px 48px;padding-top:28px;border-top:2px solid var(--red)}
+.cv-sec>h2{flex:1 1 200px;max-width:240px;margin:0;font-size:14px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.cv-body{flex:999 1 520px;min-width:0}
+.cv-body>p{margin:0;font-size:19px;line-height:1.6;font-weight:500;text-wrap:pretty}
+.jobs{display:flex;flex-direction:column;gap:36px}
+.job{display:flex;flex-direction:column;gap:8px}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 24px}
+.job h3{margin:0;font-size:22px;font-weight:900;font-stretch:112%;line-height:1.2;color:var(--red)}
+.when{margin:0;font-size:15px;font-weight:700}
+.where{margin:0;font-size:16px;font-weight:800}
+.job p.d{margin:4px 0 0;font-size:17px;line-height:1.6}
+.chips{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.chips li{padding:10px 16px;border:2px solid var(--red);border-radius:999px;font-size:15px;font-weight:700;color:var(--red)}
+.kit{margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(240px,100%),1fr));gap:28px 40px}
+.kit h3{margin:0 0 10px;font-size:15px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.kit ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:17px;line-height:1.45}
+.kit li span{opacity:.8}
+.cv-foot{padding:40px var(--pad);background:var(--red);color:var(--cream)}
+.cv-foot-in{max-width:1120px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px 32px}
+.cv-foot .big{min-height:44px;display:inline-flex;align-items:center;font-size:clamp(22px,2.4vw,30px);font-weight:900;font-stretch:112%;text-decoration:none}
+.cv-foot .meta{display:flex;flex-wrap:wrap;align-items:center;gap:8px 28px;font-size:14px;font-weight:600}
+.cv-foot .meta p{margin:0}
+.cv-foot .meta a{min-height:44px;display:inline-flex;align-items:center;text-decoration:none;font-weight:800}
+
+/* ===== Full-screen image ===== */
+.lb{position:fixed;inset:0;z-index:100;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:88px var(--pad) 32px;overflow-y:auto;background:rgba(40,6,10,.96);animation:fade .25s ease both}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+.lb-close{position:fixed;top:20px;right:20px;width:52px;height:52px;display:flex;align-items:center;justify-content:center;padding:0;border:2px solid rgba(240,231,222,.5);border-radius:50%;background:transparent;color:var(--cream)}
+.lb-close:focus-visible{outline:2px solid var(--pink);outline-offset:3px}
+.lb-frame{display:flex;align-items:flex-end;max-width:100%;padding:20px;font-size:14px;font-weight:800;letter-spacing:.08em}
+.lb-frame.has-img{padding:0}
+.lb-frame.has-img img{display:block;max-width:90vw;max-height:76vh;width:auto;height:auto}
+.lb-bar{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px 32px;color:var(--cream)}
+.lb-label{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--pink)}
+.text-btn{min-height:44px;padding:0;border:0;border-bottom:2px solid var(--pink);background:none;color:var(--cream);font:inherit;font-size:15px;font-weight:800}
+
+@media (prefers-reduced-motion:reduce){
+  .mq-track,.name-script>span,.name-sur>span,.process-box,.lb{animation:none!important}
+  .vmenu a,.plus svg,.hdr,.cards a,.shot,.f-body,.f-detail{transition:none!important}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="hdr" data-zone="img">
+  <nav class="vmenu" aria-label="Main">
+    <a href="#work">WORK</a>
+    <a href="#about">ABOUT</a>
+    <a href="#cv">RESUME</a>
+  </nav>
+</header>
+
+<main id="main">
+<div id="home">
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="top" data-zone="img">
+    <div class="hero-pin">
+      <div class="hero-top hero-fade"><p>Product Designer 2<br>at noon</p></div>
+      <div class="hero-name">
+        <h1 class="name">
+          <span class="name-script"><span>Jannah</span></span>
+          <span class="name-sur"><span>SEIFELDIN</span></span>
+        </h1>
+      </div>
+      <div class="hero-bottom hero-fade">
+        <p class="label">Based in Cairo, Egypt</p>
+        <a class="scroll-link" href="#work">Scroll
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v12M3 9l5 5 5-5"/></svg>
+        </a>
+      </div>
+      <div class="mq">
+        <div class="mq-track">
+          <div class="mq-group">
+            <span class="item">scroll to see what I’ve been making lately</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see a product designer who’s still a graphic designer at heart</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see a lot of red, pink and glass</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see where to say hi</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+          </div>
+          <div class="mq-group" aria-hidden="true">
+            <span class="item">scroll to see what I’ve been making lately</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see a product designer who’s still a graphic designer at heart</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see a lot of red, pink and glass</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+            <span class="item">scroll to see where to say hi</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WORK: a stack of folders =====
+       To add a screenshot: inside a .shot button, add <img src="images/your-file.jpg" alt="What the screen shows">,
+       then delete the "Coming soon" text and the word disabled. -->
+  <section class="work" id="work" data-zone="cream" aria-label="Selected work">
+    <div class="work-head">
+      <h2 class="work-title">Selected<span class="s">files</span></h2>
+      <p class="work-note"><span class="label">File_01–03 // noon, 2025–2026</span><span>Press a folder to open it.</span></p>
+    </div>
+    <div class="stack">
+      <div class="folder paper" data-file="0" data-name="DirectShip web" data-zone="pink" style="--c:var(--pink);--ink:var(--red);--tint:rgba(154,26,30,.12);--tabx:9%">
+        <button class="ftab paper" type="button" aria-expanded="false" aria-controls="fb-0" aria-label="Open file: DirectShip web"><span class="t-no">file_001</span><span class="t-name">directship web</span></button>
+        <div class="f-strip">
+          <h3 class="f-title"><span class="f-no">FILE_001 //</span><span class="f-name">DirectShip<span class="s">web</span></span></h3>
+          <div class="f-side"><span>Web · Seller Lab · 2025–26</span><span class="f-act"><span class="off">Open file →</span><span class="on">Close file ×</span></span></div>
+        </div>
+        <div class="f-body" id="fb-0">
+          <div class="f-inner">
+            <div class="f-detail">
+              <div class="f-info">
+                <p class="label">Web · Seller Lab</p>
+                <dl class="f-dl"><div><dt>Role</dt><dd>Main product designer</dd></div><div><dt>Platform</dt><dd>Web, inside Seller Lab</dd></div><div><dt>Year</dt><dd>2025 – 2026</dd></div></dl>
+                <p class="f-sum">DirectShip is noon’s Fulfilled by Partner model: sellers keep their own stock and pack every order, and noon takes care of delivery. I designed the DirectShip experience inside Seller Lab, the web portal where sellers manage those orders, working with my squad from first concepts to end-to-end delivery.</p>
+                <button class="f-close" type="button">Close file <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+              </div>
+              <div class="f-shots">
+                <button class="shot" type="button" disabled data-label="DirectShip web · Screen 01" style="--ar:16/10">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="DirectShip web · Screen 02" style="--ar:16/10">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="DirectShip web · Screen 03" style="--ar:16/10">Coming soon</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="folder paper" data-file="1" data-name="FBP app" data-zone="cream" style="--c:var(--paper2);--ink:var(--red);--tint:rgba(154,26,30,.1);--tabx:52%">
+        <button class="ftab paper" type="button" aria-expanded="false" aria-controls="fb-1" aria-label="Open file: FBP app"><span class="t-no">file_002</span><span class="t-name">fbp app</span></button>
+        <div class="f-strip">
+          <h3 class="f-title"><span class="f-no">FILE_002 //</span><span class="f-name">FBP<span class="s">app</span></span></h3>
+          <div class="f-side"><span>Mobile app · 2025–26</span><span class="f-act"><span class="off">Open file →</span><span class="on">Close file ×</span></span></div>
+        </div>
+        <div class="f-body" id="fb-1">
+          <div class="f-inner">
+            <div class="f-detail">
+              <div class="f-info">
+                <p class="label">Mobile app</p>
+                <dl class="f-dl"><div><dt>Role</dt><dd>Main product designer</dd></div><div><dt>Platform</dt><dd>Mobile</dd></div><div><dt>Year</dt><dd>2025 – 2026</dd></div></dl>
+                <p class="f-sum">The mobile app for noon’s Fulfilled by Partner sellers, so they can run their DirectShip orders from their phone. I was its main designer, taking it from first concepts through to the experience our engineers delivered.</p>
+                <button class="f-close" type="button">Close file <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+              </div>
+              <div class="f-shots">
+                <button class="shot" type="button" disabled data-label="FBP app · Screen 01" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="FBP app · Screen 02" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="FBP app · Screen 03" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="FBP app · Screen 04" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="FBP app · Screen 05" style="--ar:9/19.5">Coming soon</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="folder paper" data-file="2" data-name="noon Partners app" data-zone="red" style="--c:var(--red);--ink:var(--cream);--tint:rgba(240,231,222,.14);--tabx:7%">
+        <button class="ftab paper" type="button" aria-expanded="false" aria-controls="fb-2" aria-label="Open file: noon Partners app"><span class="t-no">file_003</span><span class="t-name">noon partners app</span></button>
+        <div class="f-strip">
+          <h3 class="f-title"><span class="f-no">FILE_003 //</span><span class="f-name">noon Partners<span class="s">app</span></span></h3>
+          <div class="f-side"><span>Mobile app · Design system · 2026</span><span class="f-act"><span class="off">Open file →</span><span class="on">Close file ×</span></span></div>
+        </div>
+        <div class="f-body" id="fb-2">
+          <div class="f-inner">
+            <div class="f-detail">
+              <div class="f-info">
+                <p class="label">Mobile app · Design system</p>
+                <dl class="f-dl"><div><dt>Role</dt><dd>Lead product designer</dd></div><div><dt>Platform</dt><dd>Mobile</dd></div><div><dt>Year</dt><dd>2026</dd></div><div><dt>Built</dt><dd>Design system and custom Claude design skills</dd></div></dl>
+                <p class="f-sum">A new app that brings multiple seller tools into one experience for noon’s partners. As lead designer, I created its design system and built custom Claude design skills that generate and scale its screens, so every experience is either designed by me or produced through the skills I built.</p>
+                <button class="f-close" type="button">Close file <svg width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+              </div>
+              <div class="f-shots">
+                <button class="shot" type="button" disabled data-label="noon Partners app · Screen 01" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="noon Partners app · Screen 02" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="noon Partners app · Screen 03" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="noon Partners app · Screen 04" style="--ar:9/19.5">Coming soon</button>
+                <button class="shot" type="button" disabled data-label="noon Partners app · Screen 05" style="--ar:9/19.5">Coming soon</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="folder folder--front paper" href="#cv" data-zone="wine" style="--c:var(--wine);--ink:var(--pink);--tabx:58%">
+        <span class="ftab paper" aria-hidden="true"><span class="t-no">file_004</span><span class="t-name">resume</span></span>
+        <span class="f-strip">
+          <span class="f-title"><span class="f-no">FILE_004 //</span><span class="f-name">Resume<span class="s">cv</span></span></span>
+          <span class="f-side"><span>Experience · Education · Toolkit</span><span class="f-act">Open CV →</span></span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <div class="about-band mq" aria-hidden="true" data-zone="red">
+    <div class="mq-track slow">
+      <div class="mq-group"><span class="item">Jannah Seifeldin</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg><span class="item">Product designer</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg><span class="item">Graphic designer at heart</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg></div>
+      <div class="mq-group"><span class="item">Jannah Seifeldin</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg><span class="item">Product designer</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg><span class="item">Graphic designer at heart</span><svg class="sep" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0c.6 7.2 4.8 11.4 12 12-7.2.6-11.4 4.8-12 12-.6-7.2-4.8-11.4-12-12C7.2 11.4 11.4 7.2 12 0z" fill="currentColor"/></svg></div>
+    </div>
+  </div>
+  <section class="about" id="about">
+    <div class="about-media" data-zone="photo">
+      <p class="about-hello rv" aria-hidden="true">hello</p>
+    </div>
+    <div class="about-copy" data-zone="pink">
+      <h2 class="rv about-q">Who am I?</h2>
+      <p class="lead rv">I’m a Product Designer 2 at noon, where I lead design for my squad’s new seller app, bringing multiple seller tools into one experience. I built its design system and the custom Claude design skills that help us scale it. Before that, I was the main designer for the DirectShip app and the DirectShip experience in Seller Lab. My roots are in graphic design: I studied at the German University in Cairo and spent four years shaping a jewelry brand’s identity, packaging and campaigns. It’s why I care as much about type, color and detail as I do about flows.</p>
+      <ol class="list rv">
+        <li><span class="n">01</span><span>Product Designer 2 at noon</span></li>
+        <li><span class="n">02</span><span>Built a design system and custom Claude design skills</span></li>
+        <li><span class="n">03</span><span>Four years in branding, packaging and PR</span></li>
+        <li><span class="n">04</span><span>Applied Sciences and Arts graduate, German University in Cairo</span></li>
+      </ol>
+      <div class="process rv">
+        <button class="plus" type="button" aria-expanded="false" aria-controls="process-box" aria-label="Want to see my process?">
+          <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M20 4v32M4 20h32"/></svg>
+        </button>
+        <div class="process-box" id="process-box" hidden>
+          <p class="big">Want to see my process?</p>
+          <p>See more of my work on Behance, or read my CV for the full story.</p>
+          <div class="ulinks">
+            <a href="https://www.behance.net/jannahseif" target="_blank" rel="noopener">See my Behance ↗</a>
+            <a href="#cv">View my CV →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <footer class="contact" id="contact" data-zone="wine">
+    <div class="contact-in rv">
+      <div>
+        <p class="label">Contact</p>
+        <h2 class="talk"><span class="s">say hello</span><span class="b">Let’s talk</span></h2>
+      </div>
+      <ul class="cards">
+        <li><a href="mailto:jannahseifeldin@gmail.com"><span class="k">Email</span><span class="v">jannahseifeldin@gmail.com</span></a></li>
+        <li><a href="https://www.behance.net/jannahseif" target="_blank" rel="noopener"><span class="k">Behance</span><span class="v">behance.net/jannahseif ↗</span></a></li>
+        <li><a href="#cv"><span class="k">Resume</span><span class="v">Read my CV →</span></a></li>
+      </ul>
+      <div class="foot">
+        <p>© 2026 Jannah Karim Seifeldin</p>
+        <a href="#top">Back to top
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 14V2M3 7l5-5 5 5"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- ===== CV PAGE (shown at yourdomain.com/#cv) ===== -->
+<div id="cv" class="cv" data-zone="cream" hidden>
+  <div class="cv-top">
+    <a class="btn" href="Jannah-Seifeldin-CV.pdf" download>Download PDF
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 2v9M4 7l4 4 4-4M2 14h12"/></svg>
+    </a>
+  </div>
+  <div class="cv-main">
+    <div>
+      <h1 class="cv-name"><span class="s">Jannah</span><span class="b">Karim Seifeldin</span></h1>
+      <p class="cv-role">Product Designer 2 at noon</p>
+      <ul class="cv-contact">
+        <li><a href="mailto:jannahseifeldin@gmail.com">jannahseifeldin@gmail.com</a></li>
+        <li><a href="https://www.behance.net/jannahseif" target="_blank" rel="noopener">behance.net/jannahseif</a></li>
+        <li>Cairo, Egypt</li>
+      </ul>
+    </div>
+
+    <section class="cv-sec">
+      <h2>Profile</h2>
+      <div class="cv-body">
+        <p>Product designer at noon with a graphic design core. I lead design for a new seller mobile app that brings multiple seller modules into one experience, and I built its design system and the custom Claude design skills that help scale it. Before noon, I spent four years shaping a jewelry brand’s identity, packaging, campaigns and PR.</p>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2>Experience</h2>
+      <div class="cv-body jobs">
+        <article class="job">
+          <div class="job-head"><h3>Product Designer 2</h3><p class="when">June 2026 – Present</p></div>
+          <p class="where">noon</p>
+          <p class="d">Lead designer for a new seller mobile app owned by my squad, bringing multiple seller modules into one unified experience. I created its design system and built custom Claude design skills to support and scale the design process; every experience is designed directly by me or generated through the skills I built.</p>
+        </article>
+        <article class="job">
+          <div class="job-head"><h3>Product Designer</h3><p class="when">Jan 2025 – June 2026</p></div>
+          <p class="where">noon · Supply Chain, DirectShip squad</p>
+          <p class="d">Main designer for the DirectShip mobile app and the DirectShip experience in Seller Lab. Worked with a cross-functional team of 2 product managers, 3 frontend engineers and 3 backend engineers to design and deliver end-to-end product experiences.</p>
+        </article>
+        <article class="job">
+          <div class="job-head"><h3>Graphic Designer</h3><p class="when">Sept 2024 – Nov 2024</p></div>
+          <p class="where">Funfetti</p>
+          <p class="d">Designed all creative visuals and materials for events and surprise occasions, crafting cohesive, eye-catching graphics that made each event memorable.</p>
+        </article>
+        <article class="job">
+          <div class="job-head"><h3>PR Specialist and Graphic Designer</h3><p class="when">Jan 2022 – Jul 2024</p></div>
+          <p class="where">Gemma Azzurro Jewelry Egypt</p>
+          <p class="d">Promoted to lead the design, marketing and PR departments. Led the brand’s strategic vision, managed cross-functional teams and crafted marketing campaigns, while staying hands-on with market research and packaging design.</p>
+        </article>
+        <article class="job">
+          <div class="job-head"><h3>Marketing and Branding Intern</h3><p class="when">Aug 2020 – Oct 2021</p></div>
+          <p class="where">Gemma Azzurro Jewelry Egypt</p>
+          <p class="d">Developed and ran marketing campaigns, led market research and PR strategy, and revamped and rebranded the brand’s packaging.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2>Education</h2>
+      <div class="cv-body jobs">
+        <article class="job">
+          <div class="job-head"><h3>The German University in Cairo</h3><p class="when">Oct 2019 – Jul 2024</p></div>
+          <p class="d">Bachelor of Applied Sciences and Arts, majoring in Graphic Design</p>
+        </article>
+        <article class="job">
+          <div class="job-head"><h3>Global Paradigm International School</h3><p class="when">Sept 2019</p></div>
+          <p class="d">American High School Diploma</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2>Key competencies</h2>
+      <div class="cv-body">
+        <ul class="chips">
+          <li>Product design</li>
+          <li>Design systems</li>
+          <li>Brand management</li>
+          <li>Visual communication and design</li>
+          <li>Digital marketing</li>
+          <li>Market research</li>
+          <li>Project management</li>
+          <li>Organizational skills</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cv-sec">
+      <h2>Toolkit</h2>
+      <div class="cv-body kit">
+        <div>
+          <h3>Software</h3>
+          <ul>
+            <li>Figma <span>· Advanced</span></li>
+            <li>Claude Design <span>· Advanced</span></li>
+            <li>Adobe Photoshop <span>· Advanced</span></li>
+            <li>Adobe Illustrator <span>· Advanced</span></li>
+            <li>Adobe InDesign <span>· Advanced</span></li>
+            <li>Adobe Premiere Pro <span>· Intermediate</span></li>
+            <li>Microsoft Excel <span>· Intermediate</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Languages</h3>
+          <ul>
+            <li>Arabic <span>· Native</span></li>
+            <li>English <span>· Fluent</span></li>
+            <li>Spanish <span>· Good</span></li>
+            <li>German <span>· Beginner</span></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Extracurricular</h3>
+          <ul>
+            <li>JCIMUN <span>· Junior Cairo Model United Nations</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+  <footer class="cv-foot">
+    <div class="cv-foot-in">
+      <a class="big" href="#work">See the work →</a>
+      <div class="meta">
+        <p>© 2026 Jannah Karim Seifeldin</p>
+        <a href="#cv">Back to top ↑</a>
+      </div>
+    </div>
+  </footer>
+</div>
+</main>
+
+<!-- ===== FULL-SCREEN IMAGE VIEW ===== -->
+<div class="lb" id="lightbox" role="dialog" aria-modal="true" aria-label="Image" hidden>
+  <button class="lb-close" type="button" aria-label="Close">
+    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg>
+  </button>
+  <div class="lb-frame"></div>
+  <div class="lb-bar">
+    <span class="lb-label"></span>
+    <button class="text-btn lb-next" type="button">Next image →</button>
+  </div>
+</div>
+
+<script>
+(() => {
+  const doc = document.documentElement;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = window.matchMedia('(pointer: fine)').matches;
+  const motion = !reduced;
+  if (motion) doc.classList.add('motion');
+
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  const c01 = (v) => clamp(v, 0, 1);
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  const easeInOut = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+  const r1 = (v) => Math.round(v * 10) / 10;
+  const ghost = (dx, dy, rgb) => (Math.abs(dx) + Math.abs(dy) < 0.6 ? 'none'
+    : `${r1(dx * 0.5)}px ${r1(dy * 0.5)}px 0 rgba(${rgb},.32), ${r1(dx)}px ${r1(dy)}px 0 rgba(${rgb},.14)`);
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+
+  const hdr = $('.hdr');
+  const main = $('#main');
+  const home = $('#home');
+  const cv = $('#cv');
+  const nameScript = $('.name-script');
+  const nameSur = $('.name-sur');
+  const heroFade = $$('.hero-fade');
+  const work = $('#work');
+  const stackEl = $('.stack');
+  const stackFolders = $$('.stack > .folder');
+  const zoneEls = $$('[data-zone]').filter((el) => el !== hdr);
+
+  let vw = window.innerWidth;
+  let vh = window.innerHeight;
+  let workTop = 0;
+  let workH = 0;
+  function measure() {
+    vw = window.innerWidth;
+    vh = window.innerHeight;
+    doc.style.setProperty('--vh', `${vh / 100}px`);
+    const r = work.getBoundingClientRect();
+    workTop = r.top + window.scrollY;
+    workH = r.height;
+  }
+
+  // ----- Smooth, gliding scroll for mouse wheels and trackpads -----
+  const smooth = motion && fine;
+  let gliding = false;
+  let cur = window.scrollY;
+  let target = cur;
+  let overlay = false;
+  const maxY = () => Math.max(0, doc.scrollHeight - window.innerHeight);
+  function glideTo(y) {
+    target = clamp(y, 0, maxY());
+    if (!smooth) { window.scrollTo(0, target); kick(); return; }
+    if (!gliding) { cur = window.scrollY; gliding = true; }
+    kick();
+  }
+  function jump(y) {
+    gliding = false;
+    window.scrollTo(0, y);
+    cur = target = window.scrollY;
+    kick();
+  }
+  if (smooth) {
+    window.addEventListener('wheel', (e) => {
+      if (e.ctrlKey || overlay || Math.abs(e.deltaX) > Math.abs(e.deltaY)) return;
+      e.preventDefault();
+      let d = e.deltaY;
+      if (e.deltaMode === 1) d *= 32;
+      else if (e.deltaMode === 2) d *= window.innerHeight;
+      if (!gliding) { cur = window.scrollY; target = cur; gliding = true; }
+      target = clamp(target + d, 0, maxY());
+      kick();
+    }, { passive: false });
+  }
+  window.addEventListener('scroll', () => {
+    if (!gliding) { cur = target = window.scrollY; }
+    kick();
+  }, { passive: true });
+  window.addEventListener('mousedown', () => { gliding = false; });
+
+  // ----- Animation loop -----
+  let raf = 0;
+  let prevY = window.scrollY;
+  let zone = '';
+  function kick() { if (!raf) raf = requestAnimationFrame(loop); }
+  function loop() {
+    raf = 0;
+    let more = false;
+    if (gliding) {
+      cur += (target - cur) * 0.1;
+      if (Math.abs(target - cur) < 0.5) { cur = target; gliding = false; }
+      window.scrollTo(0, cur);
+      more = gliding;
+    }
+    const y = window.scrollY;
+    const vel = y - prevY;
+    prevY = y;
+    if (Math.abs(vel) > 0.05) more = true;
+    if (y < vh * 0.4) hdr.classList.remove('away');
+    else if (vel > 1.5) hdr.classList.add('away');
+    else if (vel < -1.5) hdr.classList.remove('away');
+    render(y, vel);
+    if (more) kick();
+  }
+
+  function render(y, vel) {
+    if (motion && !home.hidden) {
+      // Hero: the name slides off to the right with a motion trail.
+      const heroP = c01(y / (vh * 0.9));
+      const g = heroP > 0 && heroP < 1 ? clamp(vel * 1.6, -90, 90) : 0;
+      nameScript.style.transform = `translate3d(${r1(easeInOut(heroP) * vw * 1.25)}px,0,0)`;
+      nameSur.style.transform = `translate3d(${r1(easeInOut(c01(heroP * 1.15 - 0.15)) * vw * 1.25)}px,0,0)`;
+      nameScript.style.textShadow = ghost(-g, 0, '239,192,198');
+      nameSur.style.textShadow = ghost(-g * 1.15, 0, '240,231,222');
+      const f = String(r1(c01(1 - heroP * 2.2)));
+      heroFade.forEach((el) => { el.style.opacity = f; });
+
+      // Work: the folders rise into the stack one after another.
+      const sr = stackEl.getBoundingClientRect();
+      const pe = c01((vh - sr.top) / (vh * 0.85));
+      stackFolders.forEach((el, i) => {
+        const k = easeOut(c01(pe * 1.35 - i * 0.1));
+        el.style.transform = k >= 1 ? '' : `translate3d(0,${r1((1 - k) * (110 + i * 55))}px,0)`;
+      });
+    }
+
+    // The fixed menu changes color to suit whatever sits under it.
+    let z = home.hidden ? 'cream' : 'img';
+    if (!home.hidden) {
+      for (const el of zoneEls) {
+        if (!home.contains(el)) continue;
+        const r = el.getBoundingClientRect();
+        if (r.top <= 64 && r.bottom > 64 && r.left <= 60 && r.right > 60) z = el.dataset.zone;
+      }
+    }
+    if (z !== zone) { zone = z; hdr.dataset.zone = z; }
+  }
+
+  // ----- Pressing a folder opens it -----
+  const fileEls = $$('.folder[data-file]');
+  let openEl = null;
+  function setOpen(el) {
+    if (el === openEl) el = null;
+    fileEls.forEach((f) => {
+      const on = f === el;
+      f.classList.toggle('is-open', on);
+      const tab = $('.ftab', f);
+      tab.setAttribute('aria-expanded', String(on));
+      tab.setAttribute('aria-label', `${on ? 'Close' : 'Open'} file: ${f.dataset.name}`);
+    });
+    openEl = el;
+    setTimeout(() => { measure(); kick(); }, 800);
+  }
+  fileEls.forEach((f) => {
+    f.addEventListener('click', (e) => {
+      if (e.target.closest('.f-close')) { setOpen(null); $('.ftab', f).focus({ preventScroll: true }); return; }
+      if (e.target.closest('.f-detail')) return;
+      setOpen(f);
+    });
+  });
+
+  // ----- Full-screen image view -----
+  const lb = $('#lightbox');
+  const lbFrame = $('.lb-frame', lb);
+  const lbLabel = $('.lb-label', lb);
+  const lbClose = $('.lb-close', lb);
+  const lbNext = $('.lb-next', lb);
+  let lbList = [];
+  let lbJ = 0;
+  let lbLast = null;
+  function fillLb() {
+    const btn = lbList[lbJ];
+    const img = $('img', btn);
+    lbFrame.textContent = '';
+    if (img) {
+      const c = img.cloneNode();
+      c.removeAttribute('class');
+      lbFrame.className = 'lb-frame has-img';
+      lbFrame.style.cssText = '';
+      lbFrame.appendChild(c);
+    } else {
+      const ar = (btn.style.getPropertyValue('--ar') || '16/10').split('/').map(parseFloat);
+      const w = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.72 * (ar[0] / ar[1]), 1100);
+      const folder = getComputedStyle(btn.closest('.folder'));
+      lbFrame.className = 'lb-frame';
+      lbFrame.style.cssText = `width:${Math.round(w)}px;aspect-ratio:${ar[0]} / ${ar[1]};background:${folder.backgroundColor};color:${folder.color}`;
+      const sp = document.createElement('span');
+      sp.textContent = '[Add full-size image]';
+      lbFrame.appendChild(sp);
+    }
+    lbLabel.textContent = btn.dataset.label || '';
+    lb.setAttribute('aria-label', btn.dataset.label || 'Image');
+  }
+  function openLb(list, j) {
+    lbList = list; lbJ = j;
+    fillLb();
+    lbLast = document.activeElement;
+    lb.hidden = false;
+    main.inert = true;
+    hdr.inert = true;
+    overlay = true;
+    gliding = false;
+    doc.classList.add('lock');
+    lbClose.focus({ preventScroll: true });
+  }
+  function closeLb() {
+    lb.hidden = true;
+    main.inert = false;
+    hdr.inert = false;
+    overlay = false;
+    doc.classList.remove('lock');
+    if (lbLast && lbLast.focus) lbLast.focus({ preventScroll: true });
+  }
+  fileEls.forEach((f) => {
+    const shots = $$('.shot', f).filter((b) => !b.disabled);
+    shots.forEach((b, j) => b.addEventListener('click', () => openLb(shots, j)));
+  });
+  lbClose.addEventListener('click', closeLb);
+  lbNext.addEventListener('click', () => { lbJ = (lbJ + 1) % lbList.length; fillLb(); });
+  lb.addEventListener('click', (e) => { if (e.target === lb) closeLb(); });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lb.hidden) {
+      if (e.key === 'Escape') closeLb();
+      else if (e.key === 'ArrowRight') lbNext.click();
+      else if (e.key === 'Tab') { e.preventDefault(); (document.activeElement === lbClose ? lbNext : lbClose).focus(); }
+      return;
+    }
+    if (e.key === 'Escape' && openEl) { const was = openEl; setOpen(null); $('.ftab', was).focus({ preventScroll: true }); return; }
+    if (['ArrowDown', 'ArrowUp', 'PageDown', 'PageUp', 'Home', 'End', ' '].includes(e.key)) gliding = false;
+  });
+
+  // ----- Plus button that spins into an X -----
+  const plus = $('.plus');
+  const box = $('#process-box');
+  if (plus && box) {
+    plus.addEventListener('click', () => {
+      const open = plus.getAttribute('aria-expanded') !== 'true';
+      plus.setAttribute('aria-expanded', String(open));
+      plus.setAttribute('aria-label', open ? 'Close' : 'Want to see my process?');
+      box.hidden = !open;
+    });
+  }
+
+  // ----- Sections slide up as they come into view -----
+  const rvs = $$('.rv');
+  if (motion && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px' });
+    rvs.forEach((el) => io.observe(el));
+  } else {
+    rvs.forEach((el) => el.classList.add('in'));
+  }
+
+  // ----- Home and CV views -----
+  function show(view) {
+    const toCv = view === 'cv';
+    const changed = cv.hidden === toCv;
+    hdr.classList.remove('away');
+    home.hidden = toCv;
+    cv.hidden = !toCv;
+    document.title = toCv ? 'CV — Jannah Karim Seifeldin' : 'Jannah Seifeldin — Product Designer';
+    $$('.vmenu a').forEach((a) => {
+      if (toCv && a.getAttribute('href') === '#cv') a.setAttribute('aria-current', 'page');
+      else a.removeAttribute('aria-current');
+    });
+    measure();
+    return changed;
+  }
+  function go(hash, animate) {
+    if (hash === '#cv') { show('cv'); jump(0); return; }
+    const changed = show('home');
+    const el = hash && hash.length > 1 ? document.getElementById(hash.slice(1)) : null;
+    let y = el ? el.getBoundingClientRect().top + window.scrollY : 0;
+    if (changed || !animate) jump(y);
+    else glideTo(y);
+  }
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest ? e.target.closest('a[href^="#"]') : null;
+    if (!a || a.classList.contains('skip')) return;
+    const h = a.getAttribute('href');
+    e.preventDefault();
+    if (h === '#') return;
+    try { if (location.hash !== h) history.pushState(null, '', h); } catch (err) { /* preview frames may block history */ }
+    go(h, true);
+  });
+  window.addEventListener('popstate', () => go(location.hash, false));
+  window.addEventListener('resize', () => { measure(); kick(); });
+  window.addEventListener('load', () => { measure(); kick(); });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(() => { measure(); kick(); });
+
+  measure();
+  if (location.hash) go(location.hash, false);
+  else kick();
+})();
+</script>
+</body>
+</html>
